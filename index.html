@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Create table</title>
+        <script>
+            function calculateproduct(){
+                const rows=document.querySelectorAll('table tbody tr')
+
+                rows.forEach(row=>{
+                    const quantity = parseFloat(row.querySelector('.quantity').textContent);
+                    const price_per_unit = parseFloat(row.querySelector('.price-per-unit').textContent);
+                    const product=quantity*price_per_unit;
+
+                    row.querySelector('.total-price').textContent=product;
+
+                    
+                });
+            }
+
+            window.onload = calculateproduct;
+        </script>
+
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 100%;
+            }
+            table,th,td{
+                border: 1px solid black;
+            }
+            th,td{
+                padding: 10px;
+            }
+            th{
+                background-color: rgb(201, 197, 197);
+            }
+            tbody tr:last-child {
+                background-color: yellow;            
+            }
+            tbody tr:nth-of-type(3n) {
+                font-weight: bold;
+                color: rgb(18, 164, 49); 
+            }
+            
+            tbody tr:nth-of-type(9){
+                font-size: 30px;
+                font-style: italic;
+            }
+
+            tbody tr:nth-of-type(1),
+            tbody tr:nth-of-type(5)
+            {
+                color: black;
+                font-size: 30px;
+                font-style: italic;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Create Table</h1>
+        <table border="1">
+            <thead><b>
+                <th>product name </th>
+                <th>quantity </th>
+                <th>price per unit </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>product1</td>
+                    <td class="quantity">1</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product2</td>
+                    <td class="quantity">2</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+        
+                    <td>product3</td>
+                    <td class="quantity">3</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product4</td>
+                    <td class="quantity">4</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product5</td>
+                    <td class="quantity">5</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product6</td>
+                    <td class="quantity">6</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product7</td>
+                    <td class="quantity">7</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product8</td>
+                    <td class="quantity">8</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td>product9</td>
+                    <td class="quantity">9</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                </tr>
+                    <td>product10</td>
+                    <td class="quantity">10</td>
+                    <td class="price-per-unit">20</td>
+                </tr>
+                <tr>
+                    <td colspan="2">sum</td>
+                    <td>80</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
